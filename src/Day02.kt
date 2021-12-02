@@ -40,8 +40,7 @@ fun part2(input: List<Pair<String, Int>>): Int =
         .take(2)
         .fold(1) { acc, value -> acc * value }
 
-/** This was done for fun to test performance difference, results below.
- *  I still like the above solution because of immutability*/
+/** This was done for fun to test performance difference, results below.*/
 fun part2MorePerformant(input: List<String>): Int {
     var x = 0
     var y = 0
