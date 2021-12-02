@@ -1,17 +1,28 @@
 fun main() {
-    fun part1(input: List<String>): Int {
-        return input.size
-    }
+    val input: List<Int> = readInputAsInts("Day01")
 
-    fun part2(input: List<String>): Int {
-        return input.size
-    }
-
-    // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
-    check(part1(testInput) == 1)
-
-    val input = readInput("Day01")
     println(part1(input))
+    println(part1Ver2(input))
     println(part2(input))
 }
+
+fun part1(list: List<Int>): Int {
+    var count = 0
+    for ((i, value) in list.withIndex()) {
+        if (i != 0) {
+            if (value > list[i-1]) count++
+        }
+    }
+
+    return count
+}
+
+
+fun part2(list: List<Int>) =
+    list.windowed(3)
+        .fold(mutableListOf<Int>()){ acc, window -> acc.also { it.add(window.sum()) }}
+        .windowed(2).count { (a, b) -> b > a}
+
+
+/** Seen from the Kotlin YouTube channel*/
+fun part1Ver2(list: List<Int>) = list.windowed(2).count { (a, b) -> a < b }
