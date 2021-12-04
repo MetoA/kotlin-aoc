@@ -1,3 +1,6 @@
+package day02
+
+import readInput
 import kotlin.system.measureTimeMillis
 
 fun main() {
@@ -6,7 +9,7 @@ fun main() {
     println(part1(input))
     println(part2(input))
     println(part2MorePerformant(readInput("Day02")))
-    println("part2Millis: $part2Millis")
+    println("day02.getPart2Millis: $part2Millis")
     println("part2PerformanceMillis: $part2PerformantMillis")
 }
 

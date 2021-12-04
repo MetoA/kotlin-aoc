@@ -1,3 +1,7 @@
+package day01
+
+import readInputAsInts
+
 fun main() {
     val input: List<Int> = readInputAsInts("Day01")
 
